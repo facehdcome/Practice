@@ -1,0 +1,2 @@
+D:\C_CODE\pplus\daily\keep\Debug\keep.exe
+D:\C_CODE\pplus\daily\keep\Debug\keep.pdb
