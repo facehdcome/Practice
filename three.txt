@@ -1,0 +1,160 @@
+//three_day
+//1.求两个数的最大公约数
+//#include <stdio.h>
+//#include <math.h>
+    //int main()
+    //{
+    //    int n1, n2, i, got;
+
+    //    printf("输入两个正整数，以空格分隔: ");
+    //    scanf("%d %d", &n1, &n2);
+
+    //    for (i = 1; i <=n1/2  && i <= n2/2; ++i)                      // 判断 i 是否为最大公约数
+    //    {
+    //        if (n1 % i == 0 && n2 % i == 0)
+    //            got = i;
+    //    }
+    //    printf("%d 和 %d 的最大公约数是 %d", n1, n2, got);
+
+    //    return 0;
+    //}
+
+
+  //  辗转相除法
+//int main()
+//{
+//    int first, last, exchange;
+//
+//    printf("请输入两个整数，中间用空格隔开一个字符：");
+//    scanf("%d %d", &first, &last);
+//
+//    while (first % last != 0)
+//    {
+//        exchange = first % last;
+//        first = last;
+//        last = exchange;
+//   }
+//
+//    printf("%d\n",last);
+//
+//    return 0;
+//}
+
+
+//2.将数组A中的内容和数组B中的内容进行交换
+//#include <stdio.h>
+//#define N 6
+//int main()
+//{
+//    int arr[6] = { 1,2,3,4,5,6 };
+//    int arr2[6] = { 7,8,9,10,11,12 };
+//    int i, temp;
+//    
+//    for (i = 0; i < N; i++)
+//    {
+//        temp = arr[i];
+//        arr[i] = arr2[i];
+//        arr2[i] = temp;
+//    }
+//
+//    for (i = 0; i < N; i++)
+//    {
+//        printf("%d" , arr[i]);
+//    }
+//    printf("\n");
+//    for (i = 0; i < N; i++)
+//    {
+//        printf("%d", arr2[i]);
+//    }
+//
+//    return 0;
+//}
+
+
+
+//使用指针
+//#include <stdio.h>
+//#define N 6
+//void swap(int* arr, int* arr2, int n)
+//{
+//    for (int i = 0; i < n; i++)
+//    {
+//        //int temp = *(arr + i);
+//        //*(arr + i) = *(arr2 + i);
+//        //*(arr2 + i) = temp;
+//
+//        int temp = *arr;
+//        *arr = *arr2;
+//        *arr2 = temp;
+//        arr++;
+//        arr2++;
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[] = { 1,2,3,4,5,6 };
+//    int arr2[] = { 7,8,9,10,11,12 };
+//    int i;
+//
+//    swap(arr, arr2,N);
+//
+//        for (i = 0; i < N; i++)
+//    {
+//        printf("%d" , arr[i]);
+//    }
+//    printf("\n");
+//    for (i = 0; i < N; i++)
+//    {
+//        printf("%d", arr2[i]);
+//    }
+//    return 0;
+//}
+
+
+
+//计算1/1-1/2+1/3-1/4+1/5 …… + 1/99 - 1/100 的值
+//#define n 100
+//#include <stdio.h>
+//int main()
+//{
+//    int den = 0;                                    //分母
+//    int mol = 1;                                    //分子
+//    int sum = 0;
+//
+//    //for (den = 1; den <=n; den++)
+//    //{
+//    //    sum += mol/den;
+//    //}
+//
+//    for (den = 1; den <= n; den++)
+//    {
+//        sum += mol / ((n + 1) * n / 2);                     //改进
+//    }
+//    printf("%d", sum);
+//
+//    return 0;
+//}
+
+
+
+//编写程序数一下 1到 100 的所有整数中出现多少个数字9
+#include <stdio.h>
+#define n 100
+int main()
+{
+    int i = 0;
+    int count = 0;
+    for (i = 1; i <= n; i++)
+    {
+        if(i % 10 == 9 ) 
+            count++;
+        if (i / 10 == 9)
+            count++;
+    }
+
+
+    printf("%d", count);
+
+    return 0;
+}
