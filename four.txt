@@ -1,0 +1,109 @@
+//four_day
+//求Sn=a+aa+aaa+aaaa+aaaaa的前5项之和，其中a是一个数字，
+//例如：2 + 22 + 222 + 2222 + 22222
+//#include <stdio.h>
+//#define N 5
+//int main()
+//{
+//    int num = 2;
+//    int sum = 0;
+//    int temp,i;
+//    
+//    temp = num;
+//    for (i = 1; i <= N; i++)
+//    {
+//        sum += num;
+//        if (i < 5)
+//            printf("%d+", num);
+//        else
+//            printf("%d=", num);
+//        num = num * 10 + temp;   
+//       
+//    }
+//    printf("%d\n", sum);
+//
+//    return 0;
+//}
+
+
+
+//2.求出0～999之间的所有“水仙花数”并输出。
+//“水仙花数”是指一个三位数，其各位数字的立方和确好等于该数本身，如；153＝1＋5＋3 ? ，则153是一个“水仙花数”
+//#include <stdio.h>
+//int main()
+//{
+//    int num = 0;
+//    int count = 0;                                  //计数器
+//    int first, middle, last;
+//
+//    for (num = 2; num <= 999; num++)
+//    {
+//        last = num % 10;
+//        middle = num / 10 % 10;
+//        first = num / 100;
+//
+//        if ((last*last*last +middle*middle*middle+first*first*first) == num)
+//        {
+//            count++;
+//            printf(" %d ", num);
+//        }
+//    }
+//    printf("\n count = %d", count);
+//
+//    return 0;
+//}
+
+
+
+//1.在屏幕上输出以下图案：**************************************
+/*  
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
+  */
+//#define N 7                             //行数
+//#include <stdio.h>  
+//int main()
+//{
+//    int row = 0;
+//    int col = 0;
+//    int space = 0;
+//
+//    for (row = 1; row <= N; row++)
+//    {
+//        for (space = row; space <= N - 1; space++)
+//        {
+//            printf(" ");
+//        }
+//        for (col = 1; col <= 2 * row - 1; col++)
+//        {
+//            printf("*");
+//        }
+//        printf("\n"); 
+//    }
+//
+//    for (row = N-1; row >=1; row--)
+//    {
+//        for (space = N-1; space >= row; space--)
+//        {
+//            printf(" ");
+//        }
+//        for (col = 1; col <= 2 * row - 1; col++)
+//         {
+//            printf("*");
+//         }
+//        printf("\n");
+//    }
+//
+//    return 0;
+//}
