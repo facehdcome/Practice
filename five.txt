@@ -1,0 +1,60 @@
+//five_day
+//猜数字游戏
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
+void menu()
+{
+        printf("*****欢迎来到猜数字游戏(数字范围为1到100)*****\n");
+        printf("********1：进入游戏*********\n");
+        printf("********0：退出游戏*********\n");
+        printf("****************************\n");
+}
+
+void game()
+{
+                                                                                            //1：实现1-100之间的随机数的生成
+        int random_num = rand() % 100 + 1;
+                                                                                        //2：进入玩家猜数字环节
+        while (1)
+        {
+            int guess = 0;                                                      //guess中储存的是玩家猜测的数字
+            printf("请输入猜测的数字：");
+            scanf("%d", &guess);
+            if (guess < random_num)
+                printf("\n猜小了\n\n");
+            else if (guess > random_num)
+                printf("\n猜大了\n\n");
+            else
+            {
+                printf("恭喜你猜对了\n\n");
+                break;                                                              //为了防止死循环，若猜对了应打破循环
+            }
+        }
+    }
+
+int main()
+{
+    srand((unsigned)time(NULL));            //定义一个随机生成数
+    int input = 0;
+
+    do
+    {
+        menu();
+        scanf("%d", &input);
+        if (input == 1)
+            game();
+        else if (input == 0)
+        {
+            printf("程序已经退出\n");
+            break;
+        }
+        else
+            printf("您输入的是无效指令，请重新输入：");
+
+    } while (input != 0);
+
+    system("pause");
+    return 0;
+}
