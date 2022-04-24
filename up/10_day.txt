@@ -1,0 +1,37 @@
+ten_day
+//实现一个函数，可以左旋字符串的k个字符
+#include <stdio.h>
+void lev(char* arr, int k)
+{
+	assert(arr);
+	//判断有效性
+	int i = 0;
+	int len = strlen(arr);
+	for (i = 0; i < k; i++)
+	{
+		char temp = *arr;
+		int j = 0;
+		for (j = 0; j < len - 1; j++)
+		{
+		*(arr + j) = *(arr + j + 1);
+		}
+		*(arr + len - 1) = temp;
+	}
+}
+
+int main()
+{
+	char arr[] = "ABCDEFG";
+	int k = 0;
+	//左旋变量
+
+	printf("这是可以 旋 的字符串：\n%s\n", arr);
+	printf("请问您需要左旋几个字符:");
+	scanf("%d", &k);
+
+	lev(arr, k);
+	printf("旋转 ：%s\n", arr);
+	//打印左旋后的字符串
+
+	return 0;
+}
