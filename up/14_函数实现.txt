@@ -1,0 +1,31 @@
+14_day 4 /26 2022
+//strncpy实现
+char* my_strncpy(char* str, const char* str2, int sz)
+{
+    assert(str != NULL);
+    assert(str2 != NULL);
+
+    char* first = str;
+    while (sz--)
+    {
+        if ((*str = *str2) != 0)
+        {
+            *str = *str2;
+            str++;
+            str2++;
+        }
+    }
+    return first;
+
+}
+
+int main()
+{
+    char arr[20] = "ABC";
+    char arr2[] = "WORLD";
+
+    my_strncpy(arr, arr2,4);
+    printf("%s", arr);
+
+    return 0;
+}
