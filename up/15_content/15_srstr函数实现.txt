@@ -1,4 +1,4 @@
-//strncpy
+//strstr函数实现
 char* my_strstr(const char* p1, const char* p2)
 {
 	assert(p1 != NULL);
