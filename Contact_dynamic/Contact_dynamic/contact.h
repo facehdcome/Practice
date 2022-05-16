@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 
 enum Option
 {
@@ -19,7 +20,8 @@ enum Option
 	SEARCH,
 	MODIFY,
 	SHOW,
-	SORT
+	SORT,
+	SAVE
 };
 //枚举本身就是整形
 
@@ -55,5 +57,12 @@ void SearchContact(struct Contact* ps);
 void ModifyContact(struct Contact* ps);
 //显示表的数据
 void ShowContact(struct Contact* ps);
+//排序表表的数据
+void SortContact(struct  Contact* ps);
+//保存通讯录信息
+void SaveContact(struct Contact* ps);
 //放空内存
 void DestroyContact(struct Contact* ps);
+
+//加载文件中的信息
+void LoadContact(struct Contact* ps);

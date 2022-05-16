@@ -12,7 +12,36 @@ void InitContact(struct Contact* ps)
 	}
 	ps->size = 0;
 	ps->capacity = DEFAULT;
+	//把文件中已经存放的通讯录中的信息加载到通讯录中
+	LoadContact(ps);
 }
+
+//声明函数
+void CheckCapacity(struct Contact* ps);
+
+void LoadContact(struct Contact* ps)
+{
+	struct PeoInfo temp = { 0 };
+	FILE* pfRead = fopen("Contact.data", "rb");
+	if (pfRead == NULL)
+	{
+		printf("LoadContact: :%s\n", strerror(errno));
+		return;
+	}
+	//读取文件，放到通讯录
+	while (fread(&temp, sizeof(struct PeoInfo), 1, pfRead))
+	{
+		CheckCapacity(ps);
+		ps->data[ps->size] = temp;
+		ps->size++;
+	}
+
+	fclose(pfRead);
+	pfRead = NULL;
+
+}
+
+
 
 void CheckCapacity(struct Contact* ps)
 {
@@ -151,7 +180,6 @@ void ModifyContact(struct Contact* ps)
 		printf("请输入家庭地址:>");
 		scanf("%s", ps->data[respond].addr);
 
-		ps->size++;
 
 		printf("修改完成\n");
 	}
@@ -180,8 +208,54 @@ void ShowContact(struct Contact* ps)
 	}
 }
 
+int cmp_age(const void* e1, const void* e2)
+{
+	return ((struct PeoInfo*)e1)->age - ((struct PeoInfo*)e2)->age;
+}
+
+void SortContact(struct  Contact* ps)
+{
+	qsort(ps->data, ps->size, sizeof(ps->data[0]), cmp_age);
+
+	int i = 0;
+	printf("\n%-20s\t %-4s \t%-5s \t%-12s\t %-20s\n", "名字", "年龄", "性别", "电话", "地址");
+	for (i = 0; i < ps->size; i++)
+	{
+		printf("%-20s\t %-4d \t%-5s \t%-12s\t %-20s\n",
+			ps->data[i].name,
+			ps->data[i].age,
+			ps->data[i].sex,
+			ps->data[i].contact,
+			ps->data[i].addr);
+	}
+}
+
+
+
 void DestroyContact(struct Contact* ps)
 {
 	free(ps->data);
 	ps->data = NULL;//避免野指针
+}
+
+void SaveContact(struct Contact* ps)
+{
+	FILE* pfwrite = fopen("Contact.data", "wb");
+	if (pfwrite == NULL)
+	{
+		printf("SaveContact: %s\n", strerror(errno));
+		return ;
+	}
+	//写铜须路路中数据到文件中
+	int i = 0;
+	for (i = 0; i < ps->size; i++)
+	{
+		fwrite(&(ps->data[i]),sizeof(struct PeoInfo),1,pfwrite);
+
+	}
+
+	fclose(pfwrite);
+	pfwrite= NULL;
+
+	printf("保存成功！");
 }

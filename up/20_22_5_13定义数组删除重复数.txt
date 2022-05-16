@@ -1,11 +1,11 @@
 int main()
 {
-	int arr[] = {1,3,4,6,2,6,2,8,2,6};
+	int arr[] = { 1,3,4,6,2,6,2,8,2,6 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
 	int i = 0;
 	int j = 0;
 	int temp = 0;//跳出最外层循环的变量，当temp = sz- 1 跳出所有循环（也就是全部遍历完成）
-	int temp2 = 0;//内层调换数据的变量（前移）可变量
+	int temp2 = 0;//内层调换数据的变量（数字前移）可变量
 	int count = 0;//记录多少个重复值
 	while (temp != (sz - 1))//判断temp是不是在最后一个值
 	{
@@ -25,7 +25,7 @@ int main()
 		{
 			temp2 = temp;//创建temp2防止temp被改变，如果被改变，最外层循环将提前结束，且从temp开始循环减少循环次数
 		}
-		
+
 		while (count > 1)//统计重复数一共count个，但是留一个只需要循环count-1次，count>1 同理
 		{
 			if (arr[temp] == arr[temp2])//进入循环要判断当前temp的值是不是和temp2这个下标对应的值相同
@@ -37,10 +37,10 @@ int main()
 				count--;//少一次循环（只有找到了才会减一，上面已经计算出循环了几次，所有不用担心无限循环）
 				sz = sz - 1;//整体少一位
 			}
-			else//如果不等于tarr[temp2] 不等于 arr[temp],让他++找到那个与她相等的值
+			else//如果tarr[temp2] 不等于 arr[temp],让temp2++找到那个与她相等的值
 				temp2++;
 		}
-}
+	}
 
 	//打印变换后的数组
 	for (i = 0; i < sz; i++)
