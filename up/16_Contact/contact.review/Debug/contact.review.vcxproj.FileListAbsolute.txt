@@ -1,2 +1,0 @@
-D:\C_CODE\contact.review\Debug\contact.review.exe
-D:\C_CODE\contact.review\Debug\contact.review.pdb
