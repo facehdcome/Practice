@@ -246,7 +246,7 @@ void SaveContact(struct Contact* ps)
 		printf("SaveContact: %s\n", strerror(errno));
 		return ;
 	}
-	//写铜须路路中数据到文件中
+	//数据到文件中
 	int i = 0;
 	for (i = 0; i < ps->size; i++)
 	{
