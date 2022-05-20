@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
 #include "contact.h"
-#include <string.h>
+
 //初始化通讯录
 void InitContact(struct Contact* ps)
 {

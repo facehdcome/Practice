@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
 #include "contact.h"
 //通讯录实现
 void menu()
