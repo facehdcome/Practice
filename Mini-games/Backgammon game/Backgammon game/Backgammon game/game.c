@@ -15,6 +15,8 @@ void InitBoard(char board[ROW][COL], int row, int col)
 	}
 }
 
+
+
 //打印棋盘
 void DisplayBoard(char board[ROW][COL], int row, int col)
 {
@@ -23,11 +25,10 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 	//打印最上面的分隔符
 	for (j = 0; j < col; j++)
 	{
-		
-			if (j < col - 1)
-				printf("----");
-			else
-				printf("-----");
+		if (j < col - 1)
+			printf("----");
+		else
+			printf("-----");
 	}
 	printf("\n");
 
@@ -47,7 +48,7 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 		//打印此行的分隔符
 		if (i < row - 1)
 		{
-			for (j = 0; j < col;j++)
+			for (j = 0; j < col; j++)
 			{
 				printf("|");
 				printf("---");
@@ -55,7 +56,7 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 			printf("|");
 			printf("\n");
 		}
-		
+
 	}
 	//打印最下面分隔符
 	for (j = 0; j < col; j++)
@@ -67,6 +68,7 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 	}
 	printf("\n");
 }
+
 
 
 //玩家下棋
@@ -97,13 +99,14 @@ void PlayerMove(char board[ROW][COL], int row, int col)
 	}
 }
 
+
+
 //电脑下棋
 void ComputerMove(char board[ROW][COL], int row, int col)
 {
 	int x = 0;
 	int y = 0;
 	printf("电脑走:\n");
-
 
 	while (1)
 	{
@@ -116,6 +119,8 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 		}
 	}
 }
+
+
 
 int IsFull(char board[ROW][COL], int row, int col)
 {
@@ -133,6 +138,7 @@ int IsFull(char board[ROW][COL], int row, int col)
 	}
 	return 1;
 }
+
 
 
 //判断谁赢

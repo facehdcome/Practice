@@ -4,14 +4,17 @@
 //初始化通讯录
 void InitContact(struct Contact* ps)
 {
+	// 初始化存放三条数据的空间
 	ps->data = malloc(3 * sizeof(struct PeoInfo));
+	//还要判断开辟空间是否成功
 	if (ps->data == NULL)
 	{
 		printf("%s\n", strerror(errno));
 	}
 	ps->size = 0;
+	//最开始容量定义为三
 	ps->capacity = DEFAULT;
-	//把文件中已经存放的通讯录中的信息加载到通讯录中
+	//把文件中已经存放在通讯录中的信息加载到最开始打开的通讯录中
 	LoadContact(ps);
 }
 
@@ -20,7 +23,10 @@ void CheckCapacity(struct Contact* ps);
 
 void LoadContact(struct Contact* ps)
 {
+	//创建一个临时结构体
 	struct PeoInfo temp = { 0 };
+
+	//读取二进制
 	FILE* pfRead = fopen("Contact.data", "rb");
 	if (pfRead == NULL)
 	{
@@ -61,18 +67,19 @@ void CheckCapacity(struct Contact* ps)
 	}	
 }
 
+
 void AddContact(struct Contact* ps)
 {
-
-	//如果满了增加空间，否则什么也不干
-
 	//if (ps->size == MAX)
 	//{
 	//	printf("\n通讯录已满，无法再次添加\n");
 	//}
 	//else
 	//{
-	CheckCapacity(ps);//检测容量
+
+	//如果满了增加空间，否则什么也不干
+	//检测容量 一次只能增加两条
+		CheckCapacity(ps);
 
 		printf("请输入姓名:>");
 		scanf("%s", ps->data[ps->size].name);
@@ -107,7 +114,6 @@ static int  FindByName(struct Contact* ps, char name[MAX_NAME])
 void DelContact(struct Contact* ps)
 {
 	char name[MAX];
-	int i = 0;
 	printf("请输入名字:>");
 	scanf("%s", name);
 	int respond = FindByName(ps,name);
@@ -120,7 +126,7 @@ void DelContact(struct Contact* ps)
 	else
 	{
 		int j = 0;
-		for (j = i; j< ps->size-1; j++)
+		for (j = respond; j< ps->size-1; j++)
 		{
 			ps->data[j] = ps->data[j + 1];
 		}
@@ -237,6 +243,8 @@ void DestroyContact(struct Contact* ps)
 	ps->data = NULL;//避免野指针
 }
 
+
+
 void SaveContact(struct Contact* ps)
 {
 	FILE* pfwrite = fopen("Contact.data", "wb");
@@ -250,7 +258,6 @@ void SaveContact(struct Contact* ps)
 	for (i = 0; i < ps->size; i++)
 	{
 		fwrite(&(ps->data[i]),sizeof(struct PeoInfo),1,pfwrite);
-
 	}
 
 	fclose(pfwrite);

@@ -12,11 +12,12 @@ void game()
 {
 	//返回结果
 	char ret = 0;
+
 	char board[ROW][COL] = { 0 };
 	//初始化
-	InitBoard(board,ROW,COL);
+	InitBoard(board, ROW, COL);
 	//打印键盘
-	DisplayBoard(board,ROW,COL);
+	DisplayBoard(board, ROW, COL);
 	//开始下棋
 	while (1)
 	{
@@ -24,12 +25,11 @@ void game()
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		//玩家是否赢
-		ret = IsWin(board, ROW,COL);
+		ret = IsWin(board, ROW, COL);
 		if (ret != 'C')
 		{
 			break;
 		}
-
 
 		//电脑下棋
 		ComputerMove(board, ROW, COL);
@@ -57,6 +57,7 @@ void game()
 
 void test()
 {
+	//srand()为初始化随机数发生器，用于设置rand()产生随机数时的种子
 	srand((unsigned int)time(NULL));
 	int input = 0;
 	do

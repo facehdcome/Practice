@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.c">
+    <ClCompile Include="link.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.c">
+    <ClCompile Include="LinkList.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="LinkList.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
