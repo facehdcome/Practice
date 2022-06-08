@@ -1,0 +1,4 @@
+﻿  单向链表.c
+D:\C_CODE\Project\data structure\链表2.0\链表2.0\单向链表.c(84,14): warning C4098: “foreach_LinkList”:“void”函数返回值
+D:\C_CODE\Project\data structure\链表2.0\链表2.0\单向链表.c(135,14): warning C4098: “removeByPos_LinkList”:“void”函数返回值
+  链表2.0.vcxproj -> D:\C_CODE\Project\data structure\链表2.0\x64\Debug\链表2.0.exe

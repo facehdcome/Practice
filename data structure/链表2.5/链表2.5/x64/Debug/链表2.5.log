@@ -1,0 +1,5 @@
+﻿  单向链表_企业版.c
+D:\C_CODE\Project\data structure\链表2.5\链表2.5\单向链表_企业版.c(42,14): warning C4098: “insert_LinkList”:“void”函数返回值
+D:\C_CODE\Project\data structure\链表2.5\链表2.5\单向链表_企业版.c(47,14): warning C4098: “insert_LinkList”:“void”函数返回值
+D:\C_CODE\Project\data structure\链表2.5\链表2.5\单向链表_企业版.c(81,14): warning C4098: “foreach_LinkList”:“void”函数返回值
+  链表2.5.vcxproj -> D:\C_CODE\Project\data structure\链表2.5\x64\Debug\单向链表-企业版.exe
