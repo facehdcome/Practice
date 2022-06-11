@@ -1,4 +1,0 @@
-﻿  顺序存储栈.c
-D:\C_CODE\Project\data structure\栈\栈的顺序存储\栈的顺序存储\顺序存储栈.c(81,3): warning C4033: “top_SeqStack”必须返回值
-D:\C_CODE\Project\data structure\栈\栈的顺序存储\栈的顺序存储\顺序存储栈.c(91): warning C4715: “top_SeqStack”: 不是所有的控件路径都返回值
-  栈的顺序存储.vcxproj -> D:\C_CODE\Project\data structure\栈\栈的顺序存储\x64\Debug\栈的顺序存储.exe

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32519.111
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 栈的应用案例（就近匹配）", "04 栈的应用案例（就近匹配）.vcxproj", "{BB10F435-A383-48FF-8E71-91AF2C5CC656}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB10F435-A383-48FF-8E71-91AF2C5CC656}.Debug|x86.ActiveCfg = Debug|Win32
+		{BB10F435-A383-48FF-8E71-91AF2C5CC656}.Debug|x86.Build.0 = Debug|Win32
+		{BB10F435-A383-48FF-8E71-91AF2C5CC656}.Release|x86.ActiveCfg = Release|Win32
+		{BB10F435-A383-48FF-8E71-91AF2C5CC656}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0181D424-A681-47BD-BE82-F412D02D7B92}
+	EndGlobalSection
+EndGlobal
